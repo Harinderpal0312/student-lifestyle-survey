@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Lifestyle Survey</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Student Lifestyle Survey</h1>
+    <p>Please complete the survey below.</p>
+
+    <form id="userForm" novalidate>
+        <label for="userName">Your Name:</label>
+        <input type="text" id="userName" name="userName">
+        <span id="userNameError" class="error-message" aria-live="polite"></span>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <span id="emailError" class="error-message" aria-live="polite"></span>
+
+        <label for="username">Username (letters and numbers only):</label>
+        <input type="text" id="username" name="username">
+        <span id="usernameError" class="error-message" aria-live="polite"></span>
+
+        <fieldset>
+            <legend>Do you enjoy studying?</legend>
+            <input type="radio" id="yes" name="enjoyStudy" value="Yes">
+            <label for="yes">Yes</label>
+            <input type="radio" id="no" name="enjoyStudy" value="No">
+            <label for="no">No</label>
+            <span id="enjoyStudyError" class="error-message" aria-live="polite"></span>
+        </fieldset>
+
+        <fieldset>
+            <legend>What are your hobbies?</legend>
+            <input type="checkbox" id="reading" name="hobbies" value="Reading">
+            <label for="reading">Reading</label>
+            <input type="checkbox" id="music" name="hobbies" value="Music">
+            <label for="music">Music</label>
+            <input type="checkbox" id="sports" name="hobbies" value="Sports">
+            <label for="sports">Sports</label>
+            <span id="hobbiesError" class="error-message" aria-live="polite"></span>
+        </fieldset>
+
+        <label for="studyTime">Preferred Study Time:</label>
+        <select id="studyTime" name="studyTime">
+            <option value="">Select an option</option>
+            <option value="Morning">Morning</option>
+            <option value="Afternoon">Afternoon</option>
+            <option value="Evening">Evening</option>
+        </select>
+        <span id="studyTimeError" class="error-message" aria-live="polite"></span>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="1">
+        <span id="ageError" class="error-message" aria-live="polite"></span>
+
+        <label for="comments">Additional Comments:</label>
+        <textarea id="comments" name="comments"></textarea>
+        <span id="commentsError" class="error-message" aria-live="polite"></span>
+
+        <input type="submit" value="Submit Survey">
+    </form>
+
+    <h2>Survey Responses</h2>
+    <table id="surveyTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Username</th>
+                <th>Enjoys Studying</th>
+                <th>Hobbies</th>
+                <th>Study Time</th>
+                <th>Age</th>
+                <th>Comments</th>
+            </tr>
+        </thead>
+        <tbody id="surveyBody"></tbody>
+    </table>
+
+    <button type="button" id="clearButton">Clear Responses</button>
+</body>
+</html>
+
